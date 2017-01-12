@@ -3,7 +3,7 @@ export default (state, action) => {
   const INITIAL_STATE = {
     collection: ['http://media4.giphy.com/media/fZNQv37Zv51iU/giphy.gif',
                  'http://media4.giphy.com/media/o0vwzuFwCGAFO/giphy.gif',
-                 'https://media.giphy.com/media/kSCB3oEcIpwRO/giphy.gif'],
+                 'https://media.giphy.com/media/Jjo6WPW26zDdS/giphy.gif'],
     currentIndex: 0
   }
 

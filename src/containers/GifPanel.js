@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import React, { Component } from 'react'
 
 import CurrentGif from '../components/CurrentGif'
-import Controls from '../components/Controls'
-
 import { next, prev } from '../actions/index.js'
 
 class GifPanel extends Component {
@@ -12,10 +10,10 @@ class GifPanel extends Component {
   render() {
     <CurrentGif />
     const source = this.props.collection[this.props.currentIndex]
+
     return (
       <div>
-        <CurrentGif gifSrc={source}/>
-        <Controls next={this.props.next} prev={this.props.prev}/>
+        <CurrentGif gifSrc={source} next={this.props.next} prev={this.props.prev}/>
       </div>
     )
   }
