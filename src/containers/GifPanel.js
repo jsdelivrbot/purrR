@@ -1,17 +1,13 @@
-import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import React, { Component } from 'react'
+
 import CurrentGif from '../components/CurrentGif'
 import Controls from '../components/Controls'
 
+import { next, prev } from '../actions/index.js'
+
 class GifPanel extends Component {
-
-  showNext() {
-
-  }
-
-  showPrev() {
-
-  }
 
   render() {
     <CurrentGif />
@@ -19,7 +15,7 @@ class GifPanel extends Component {
     return (
       <div>
         <CurrentGif gifSrc={source}/>
-        <Controls showNext={this.showNext} showPrev={this.showPrev}/>
+        <Controls next={this.props.next} prev={this.props.prev}/>
       </div>
     )
   }
@@ -33,8 +29,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (state) => {
-  updateCurrentIndex: updateCurrentIndex
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+  {
+    next,
+    prev
+  }, dispatch)
 }
 
-export default connect(mapStateToProps)(GifPanel)
+export default connect(mapStateToProps, mapDispatchToProps)(GifPanel)
